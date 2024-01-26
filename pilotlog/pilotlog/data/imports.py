@@ -84,7 +84,7 @@ def _catch_exception(f):
             return {'Error': str(e)}
     return wrapped
 
-#@_catch_exception
+@_catch_exception
 def import_pilot_log(stream):
     counters = defaultdict(lambda: {'added': 0, 'updated': 0, 'skipped': 0})
     for item in json.load(SanitizeJSON(stream)):
